@@ -66,6 +66,9 @@ class MoviesCollectionViewController: UICollectionViewController {
         
         collectionView?.visibleCells.forEach({ (cell) in
             guard let cell = cell as? MovieCollectionViewCell else {return}
+            //memory erasure :) //we could also iterate over collectionView?.indexPathsForVisibleItems  
+            
+            collectionView?.deselectItem(at: collectionView!.indexPath(for: cell)!, animated: false)
             cell.isEditing = editing
         })
     }
