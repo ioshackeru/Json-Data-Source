@@ -14,7 +14,7 @@
         <scene sceneID="sHe-mf-Izb">
             <objects>
                 <collectionViewController id="zrp-ZU-ilw" customClass="MoviesCollectionViewController" customModule="MoviesFromJson" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="aVZ-ud-6Xd">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="aVZ-ud-6Xd">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -38,7 +38,7 @@
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="place" translatesAutoresizingMaskIntoConstraints="NO" id="S4w-q5-En7">
                                                     <rect key="frame" x="4" y="4" width="151" height="139"/>
                                                 </imageView>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icons8-unchecked" translatesAutoresizingMaskIntoConstraints="NO" id="znf-sz-gIL">
+                                                <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icons8-unchecked" translatesAutoresizingMaskIntoConstraints="NO" id="znf-sz-gIL">
                                                     <rect key="frame" x="67" y="114" width="25" height="25"/>
                                                 </imageView>
                                             </subviews>
@@ -71,6 +71,11 @@
                             <outlet property="delegate" destination="zrp-ZU-ilw" id="ztg-wF-35y"/>
                         </connections>
                     </collectionView>
+                    <toolbarItems>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="Z2f-ah-QK0"/>
+                        <barButtonItem systemItem="trash" id="PTI-Q8-Adk"/>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="dZb-VL-6As"/>
+                    </toolbarItems>
                     <navigationItem key="navigationItem" title="CollectionView" id="ZPV-fb-QEu">
                         <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="g2p-Yr-4G5">
                             <connections>
@@ -226,14 +231,14 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="VqM-yD-2KL">
-                                            <rect key="frame" x="16" y="5" width="33.5" height="20.5"/>
+                                            <rect key="frame" x="15" y="5" width="33.5" height="20.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="h5E-GN-0ic">
-                                            <rect key="frame" x="16" y="25.5" width="44" height="14.5"/>
+                                            <rect key="frame" x="15" y="25.5" width="44" height="14.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <nil key="textColor"/>
@@ -293,13 +298,17 @@
         <!--Navigation Controller-->
         <scene sceneID="Q31-SM-SsU">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="VKj-Wr-siu" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" toolbarHidden="NO" id="VKj-Wr-siu" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="zM4-NL-t1N">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="gRi-2A-4iX">
+                        <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="zrp-ZU-ilw" kind="relationship" relationship="rootViewController" id="44o-rH-Qhp"/>
                     </connections>

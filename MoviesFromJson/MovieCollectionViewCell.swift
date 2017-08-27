@@ -12,9 +12,6 @@ class MovieCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var posterImage: UIImageView!
     @IBOutlet weak var checkedImageView: UIImageView!
     
-    @IBOutlet weak var testLabel: UILabel!
-    
-    
     //put the model here
     
     //if the cell is selected: change the image accordingly

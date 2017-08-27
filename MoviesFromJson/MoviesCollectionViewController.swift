@@ -26,23 +26,19 @@ class MoviesCollectionViewController: UICollectionViewController {
         let indexPath = IndexPath(item: 0, section: 0)
         
         self.collectionView?.insertItems(at: [indexPath])
+        
+        
     }
     
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.toolbar.isHidden = true
         MoviesDataSource.getMovies { (movies) in
             self.movies = movies
             self.collectionView?.reloadData()
         }
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Register cell classes
-        //self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-
-        // Do any additional setup after loading the view.
         
         //get the Layout as! FlowLayout: (The Layout has the itemSize property that we need to set)
         let layout = collectionView?.collectionViewLayout as! UICollectionViewFlowLayout
@@ -50,11 +46,28 @@ class MoviesCollectionViewController: UICollectionViewController {
         //Detemine the item size:
         //        let itemHeight = ((collectionView?.frame.size.height)! / 2)
         let itemWidth = ((collectionView?.frame.size.width)! / 3)
-        
-        //        let itemSize = CGSize(width: itemWidth, height: itemHeight)
-        //        
-        
         layout.itemSize.width = itemWidth
+        
+        //hide the insert item button / show the edit button
+        self.navigationItem.leftBarButtonItem = self.editButtonItem
+        self.navigationItem.rightBarButtonItem?.isEnabled = !isEditing
+    }
+    
+    override func setEditing(_ editing: Bool, animated: Bool) {
+        super.setEditing(editing, animated: animated)
+        
+        //Now We would like to iterate over all the cells in the collection view.
+        //set their isEditing property.  (We need only iterate the visible cells since cells are recycled!!!
+        // for the new cells to come, we should set their property in cell for item at index path
+        
+        collectionView?.allowsMultipleSelection  = editing
+        self.navigationController?.toolbar.isHidden = !editing
+        self.navigationItem.rightBarButtonItem?.isEnabled = !editing
+        
+        collectionView?.visibleCells.forEach({ (cell) in
+            guard let cell = cell as? MovieCollectionViewCell else {return}
+            cell.isEditing = editing
+        })
     }
 
     override func didReceiveMemoryWarning() {
