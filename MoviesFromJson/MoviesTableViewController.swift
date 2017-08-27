@@ -26,10 +26,10 @@ class MoviesTableViewController: UITableViewController {
         }
         
         // Uncomment the following line to preserve selection between presentations
-            self.clearsSelectionOnViewWillAppear = false
+        self.clearsSelectionOnViewWillAppear = false
         
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        self.navigationItem.leftBarButtonItem = self.editButtonItem
     }
     
     func addIndicator(){
@@ -78,14 +78,17 @@ class MoviesTableViewController: UITableViewController {
         
         //https://...movie.poster
         cell.moviePoster.sd_setImage(with: URL(string: movie.poster), placeholderImage: #imageLiteral(resourceName: "place"))
-        cell.moviePoster.clipsToBounds  = true
-        cell.moviePoster.layer.cornerRadius = 20
-        cell.moviePoster.layer.borderWidth = 3
-        cell.moviePoster.layer.borderColor = UIColor.white.cgColor
         
+        roundCornersForView(view: cell.moviePoster)
         return cell
     }
     
+    func roundCornersForView(view:UIView){
+        view.clipsToBounds  = true
+        view.layer.cornerRadius = 20
+        view.layer.borderWidth = 3
+        view.layer.borderColor = UIColor.white.cgColor
+    }
     
     /*
      // Override to support conditional editing of the table view.

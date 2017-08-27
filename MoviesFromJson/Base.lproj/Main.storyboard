@@ -38,10 +38,15 @@
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="place" translatesAutoresizingMaskIntoConstraints="NO" id="S4w-q5-En7">
                                                     <rect key="frame" x="4" y="4" width="151" height="139"/>
                                                 </imageView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icons8-unchecked" translatesAutoresizingMaskIntoConstraints="NO" id="znf-sz-gIL">
+                                                    <rect key="frame" x="67" y="114" width="25" height="25"/>
+                                                </imageView>
                                             </subviews>
                                             <color key="backgroundColor" red="0.01553104275" green="0.71558634990000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
+                                                <constraint firstItem="znf-sz-gIL" firstAttribute="centerX" secondItem="nbH-yD-N6y" secondAttribute="centerX" id="0Sy-9B-4b2"/>
                                                 <constraint firstItem="S4w-q5-En7" firstAttribute="leading" secondItem="nbH-yD-N6y" secondAttribute="leading" constant="4" id="Css-cx-4cj"/>
+                                                <constraint firstAttribute="bottom" secondItem="znf-sz-gIL" secondAttribute="bottom" constant="8" id="m3W-5W-rFX"/>
                                                 <constraint firstItem="S4w-q5-En7" firstAttribute="top" secondItem="nbH-yD-N6y" secondAttribute="top" constant="4" id="qNG-0I-1xc"/>
                                                 <constraint firstAttribute="bottom" secondItem="S4w-q5-En7" secondAttribute="bottom" constant="4" id="wkB-0V-qUZ"/>
                                                 <constraint firstAttribute="trailing" secondItem="S4w-q5-En7" secondAttribute="trailing" constant="4" id="zRD-b3-E6A"/>
@@ -56,6 +61,7 @@
                                     <constraint firstItem="nbH-yD-N6y" firstAttribute="top" secondItem="fTc-TN-nCf" secondAttribute="top" id="g6s-hM-EKi"/>
                                 </constraints>
                                 <connections>
+                                    <outlet property="checkedImageView" destination="znf-sz-gIL" id="cRc-fk-zh2"/>
                                     <outlet property="posterImage" destination="S4w-q5-En7" id="Ty0-VH-saC"/>
                                 </connections>
                             </collectionViewCell>
@@ -201,7 +207,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CXO-9w-Rrf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2964" y="-584"/>
+            <point key="canvasLocation" x="3428" y="-570"/>
         </scene>
         <!--Currencies-->
         <scene sceneID="i5m-iE-xRA">
@@ -304,6 +310,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="icons8-unchecked" width="25" height="25"/>
         <image name="place" width="160" height="160"/>
     </resources>
 </document>
