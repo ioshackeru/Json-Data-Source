@@ -9,9 +9,13 @@
 import UIKit
 
 class MovieCollectionViewCell: UICollectionViewCell {
+    
     @IBOutlet weak var posterImage: UIImageView!
+    
     @IBOutlet weak var checkedImageView: UIImageView!
     
+    @IBOutlet weak var burgerImageView: UIImageView!
+
     //put the model here
     
     //if the cell is selected: change the image accordingly
@@ -24,6 +28,7 @@ class MovieCollectionViewCell: UICollectionViewCell {
     var isEditing:Bool = false{
         didSet{
             checkedImageView.isHidden = !isEditing
+            burgerImageView.isHidden = !isEditing
         }
     }
     
@@ -31,6 +36,21 @@ class MovieCollectionViewCell: UICollectionViewCell {
         didSet{
             checkedImageView.image = isSelected ? #imageLiteral(resourceName: "icons8-checked") : #imageLiteral(resourceName: "icons8-unchecked")
         }
-        
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

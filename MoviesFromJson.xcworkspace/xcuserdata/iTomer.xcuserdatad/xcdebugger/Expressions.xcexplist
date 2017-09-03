@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "MoviesCollectionViewController.performDelete(UIBarButtonItem) -&gt; ():MoviesCollectionViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "movies">
+            </PersistentString>
+            <PersistentString
+               value = "path.item">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "MoviesCollectionViewController.(performDelete(UIBarButtonItem) -&gt; ()).(closure #1):MoviesCollectionViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "movies">
+            </PersistentString>
+            <PersistentString
+               value = "path.item">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>

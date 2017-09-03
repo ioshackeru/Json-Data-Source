@@ -75,7 +75,7 @@ class MoviesDataSource {
 //TODO:
 //class Movie:
 //title, geners[], poster
-class Movie : CustomStringConvertible{
+class Movie : CustomStringConvertible, Equatable{
     //properties:
     let title: String
     let genres: [String]
@@ -91,9 +91,10 @@ class Movie : CustomStringConvertible{
     var description: String{
         return "\(title)\n\(poster)\n\(genres)\n----------------\n"
     }
-    
+    public static func ==(lhs: Movie, rhs: Movie) -> Bool{
+        return lhs.title == rhs.title && lhs.poster == rhs.poster && lhs.genres == rhs.genres
+    }
 }
-
 
 
 
